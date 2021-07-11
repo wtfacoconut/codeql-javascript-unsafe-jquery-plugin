@@ -10,7 +10,7 @@ predicate isSource(DataFlow::Node inSrcNode){
     exists( DataFlow::ParameterNode paramNode |
         inSrcNode = paramNode
         and exists(DataFlow::FunctionNode funcNode |
-            funcNode.getParameter(0) = paramNode
+            funcNode.getAParameter() = paramNode
             and funcNode = jquery().getAPropertyRead("fn").getAPropertySource()
         )
     )
